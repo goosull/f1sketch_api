@@ -1,8 +1,6 @@
 # track_utils.py
 
 import numpy as np
-from fastdtw import fastdtw
-from scipy.spatial.distance import euclidean
 
 def interpolate_path(path: np.ndarray, num_points: int = 100) -> np.ndarray:
     path = np.array(path)
