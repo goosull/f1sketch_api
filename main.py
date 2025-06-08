@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.post("/compare")
 async def compare(data: TrackInput):
-    score, distance = calculate_similarity_score(
+    score, distance, user_path = calculate_similarity_score(
         data.user_path,
         data.ground_truth,
         num_points=100,
@@ -14,5 +14,6 @@ async def compare(data: TrackInput):
     return {
         "score": score,
         "distance": distance,
-        "metric": "interpolate→normalize→circular-shift"
+        "metric": "interpolate→normalize→circular-shift",
+        "user_path": user_path.tolist(), 
     }
