@@ -48,10 +48,13 @@ def calculate_similarity_score(
     # 3) 최적 원형 시프트 매칭
     avg_dist = _best_circular_distance(u, g)
     # 4) 점수 환산
-    score    = max(0, 100 - (avg_dist * 100) ** 2.5)
+    loc = 0.05     
+    steep = 10.0    
+    score = 100 / (1 + np.exp( steep * (avg_dist - loc) ))
+    score = float(np.clip(score, 0, 100))
     return round(score,    2), \
            round(avg_dist, 4), \
-            u
+           u
 
 
 import os
