@@ -15,5 +15,5 @@ async def compare(data: TrackInput):
         "score": score,
         "distance": distance,
         "metric": "interpolate→normalize→circular-shift",
-        "user_path": user_path.tolist(), 
+        "normalized_user_path": user_path.tolist(), 
     }
