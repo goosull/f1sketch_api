@@ -52,7 +52,7 @@ def calculate_similarity_score(
     steep = 33    
     score = 100 / (1 + np.exp( steep * (avg_dist - loc) ))
     score = float(np.clip(score, 0, 100))
-    return round(score,    2), \
+    return round(score,    1), \
            round(avg_dist, 4), \
            u
 

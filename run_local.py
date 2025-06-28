@@ -8,7 +8,7 @@ def load_path(filepath):
 
 def main():
     if len(sys.argv) != 3:
-        print("사용법: python run_local.py user.json ground_truth.json")
+        print("사용법: python run_local.py ex.json gt.json")
         return
 
     user_path = load_path(sys.argv[1])
